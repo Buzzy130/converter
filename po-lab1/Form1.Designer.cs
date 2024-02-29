@@ -60,6 +60,10 @@
             trackBar2 = new TrackBar();
             contextMenuStrip2 = new ContextMenuStrip(components);
             numericUpDown2 = new NumericUpDown();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
@@ -330,7 +334,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(318, 23);
             textBox2.TabIndex = 28;
-            textBox2.Text = "Тут будет выведен результат";
             textBox2.TextAlign = HorizontalAlignment.Center;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
@@ -363,11 +366,51 @@
             numericUpDown2.TabIndex = 32;
             numericUpDown2.ValueChanged += numericUpDown2_ValueChanged;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(157, 94);
+            label1.Name = "label1";
+            label1.Size = new Size(170, 15);
+            label1.TabIndex = 33;
+            label1.Text = "Исходная система счисления";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(109, 205);
+            label2.Name = "label2";
+            label2.Size = new Size(240, 15);
+            label2.TabIndex = 34;
+            label2.Text = "Система счисления в которую переводим";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(174, 27);
+            label3.Name = "label3";
+            label3.Size = new Size(120, 15);
+            label3.TabIndex = 35;
+            label3.Text = "Сюда вводить число";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(157, 141);
+            label4.Name = "label4";
+            label4.Size = new Size(162, 15);
+            label4.TabIndex = 36;
+            label4.Text = "Тут будет выведен результат";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(472, 503);
+            ClientSize = new Size(477, 494);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(numericUpDown2);
             Controls.Add(trackBar2);
             Controls.Add(textBox2);
@@ -398,7 +441,7 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "converter";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
@@ -441,5 +484,9 @@
         private TrackBar trackBar2;
         private ContextMenuStrip contextMenuStrip2;
         private NumericUpDown numericUpDown2;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }

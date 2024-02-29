@@ -81,8 +81,8 @@ namespace po_lab1
                 }
 
 
-
-                    textBox2.Text = result;
+                button21.Enabled = true;
+                textBox2.Text = result;
             }
         }
 
@@ -113,7 +113,14 @@ namespace po_lab1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox1.Text + "0";
+            if ((textBox1.Text.Length == 1) && (textBox1.Text == "0"))
+            {
+                MessageBox.Show("не допустимо вводить больше значащих нулей");
+            }
+            else
+            {
+                textBox1.Text = textBox1.Text + "0";
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -285,6 +292,8 @@ namespace po_lab1
         private void button21_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text + ".";
+            button21.Enabled = false;
+
         }
 
         private void button22_Click(object sender, EventArgs e)

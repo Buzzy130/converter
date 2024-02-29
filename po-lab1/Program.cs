@@ -90,12 +90,14 @@ namespace po_lab1
             return decimalFraction;
         }
 
+
         private static string ConvertFromDecimal(double decimalNumber, int toBase)
         {
             string result = "";
             int integerPart = (int)decimalNumber;
             double fractionalPart = decimalNumber - integerPart;
 
+            // Convert integer part to binary
             while (integerPart > 0)
             {
                 int remainder = integerPart % toBase;
@@ -103,6 +105,13 @@ namespace po_lab1
                 integerPart /= toBase;
             }
 
+            // If the result is empty, set it to "0"
+            if (result == "")
+            {
+                result = "0";
+            }
+
+            // Add fractional part if it exists
             if (fractionalPart > 0)
             {
                 result += ".";
@@ -113,6 +122,9 @@ namespace po_lab1
                     result += GetCharValue(wholePart);
                     fractionalPart -= wholePart;
                 }
+
+                // Trim trailing zeros from fractional part
+                result = result.TrimEnd('0').TrimEnd('.');
             }
 
             return result;
