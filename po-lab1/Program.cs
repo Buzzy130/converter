@@ -26,7 +26,7 @@ namespace po_lab1
 
     public class NumberConverter
     {
-        public static string ConvertNumber(string number, int fromBase, int toBase)
+        public static string ConvertNumber(string number, int fromBase, int toBase)//перевод в 10
         {
             string[] parts = number.Split('.');
             string integerPart = parts[0];
@@ -37,11 +37,11 @@ namespace po_lab1
 
             double decimalNumber = decimalIntegerPart + decimalFractionalPart;
 
-            string result = ConvertFromDecimal(decimalNumber, toBase);
+            string result = ConvertFromDecimal(decimalNumber, toBase);//преобразуем в нужную систему счисления
             return result;
         }
 
-        private static int ConvertToDecimal(string number, int fromBase)
+        private static int ConvertToDecimal(string number, int fromBase)//преобразование в десятичное число
         {
             int decimalNumber = 0;
             int power = 0;
@@ -56,7 +56,7 @@ namespace po_lab1
             return decimalNumber;
         }
 
-        private static int GetDigitValue(char digit)
+        private static int GetDigitValue(char digit)//преобразует из string в int
         {
             if (char.IsDigit(digit))
             {
@@ -77,7 +77,7 @@ namespace po_lab1
             }
         }
 
-        private static double ConvertFractionToDecimal(string fraction, int fromBase)
+        private static double ConvertFractionToDecimal(string fraction, int fromBase)//преобразует дробную часть в 10 систему счисления
         {
             double decimalFraction = 0.0;
 
@@ -97,7 +97,7 @@ namespace po_lab1
             int integerPart = (int)decimalNumber;
             double fractionalPart = decimalNumber - integerPart;
 
-            // Convert integer part to binary
+            // Преобразовать целочисленный путь в двоичный путем деления числа на основание системы
             while (integerPart > 0)
             {
                 int remainder = integerPart % toBase;
@@ -105,17 +105,17 @@ namespace po_lab1
                 integerPart /= toBase;
             }
 
-            // If the result is empty, set it to "0"
+            // Если результат пуст, установите для него значение "0".
             if (result == "")
             {
                 result = "0";
             }
 
-            // Add fractional part if it exists
+            // Добавьте дробную часть, если она существует путем умножения дробной части на основание системы
             if (fractionalPart > 0)
             {
                 result += ".";
-                for (int i = 0; i < 5; i++) // Display up to 5 decimal places
+                for (int i = 0; i < 5; i++) // Отображение до 5 знаков после запятой
                 {
                     fractionalPart *= toBase;
                     int wholePart = (int)fractionalPart;
@@ -123,14 +123,14 @@ namespace po_lab1
                     fractionalPart -= wholePart;
                 }
 
-                // Trim trailing zeros from fractional part
+                // Обрезать конечные нули из дробной части
                 result = result.TrimEnd('0').TrimEnd('.');
             }
 
             return result;
         }
 
-        private static char GetCharValue(int value)
+        private static char GetCharValue(int value)// преобразует из int в char
         {
             return value switch
             {
