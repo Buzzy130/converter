@@ -17,6 +17,7 @@ namespace po_lab1
         public Form1()
         {
             InitializeComponent();
+            textBox1.ReadOnly = true;
         }
 
         public string GetTextBoxValue()
@@ -111,6 +112,7 @@ namespace po_lab1
             }
         }
 
+
         private void button5_Click(object sender, EventArgs e)
         {
             if ((textBox1.Text.Length == 1) && (textBox1.Text == "0"))
@@ -130,7 +132,7 @@ namespace po_lab1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button8_Click(object sender, EventArgs e)

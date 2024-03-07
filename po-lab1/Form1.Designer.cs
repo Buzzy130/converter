@@ -72,6 +72,7 @@
             // 
             // textBox1
             // 
+            textBox1.CausesValidation = false;
             textBox1.Location = new Point(76, 45);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(318, 23);
@@ -326,6 +327,7 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(39, 23);
             numericUpDown1.TabIndex = 27;
+            numericUpDown1.Value = new decimal(new int[] { 2, 0, 0, 0 });
             numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // textBox2
@@ -364,6 +366,7 @@
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(39, 23);
             numericUpDown2.TabIndex = 32;
+            numericUpDown2.Value = new decimal(new int[] { 2, 0, 0, 0 });
             numericUpDown2.ValueChanged += numericUpDown2_ValueChanged;
             // 
             // label1
